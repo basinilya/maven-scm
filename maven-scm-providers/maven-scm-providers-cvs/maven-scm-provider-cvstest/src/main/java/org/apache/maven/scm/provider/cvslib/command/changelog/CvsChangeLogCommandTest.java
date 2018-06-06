@@ -24,6 +24,7 @@ import org.apache.maven.scm.command.changelog.ChangeLogSet;
 import org.apache.maven.scm.manager.ScmManager;
 import org.apache.maven.scm.provider.cvslib.AbstractCvsScmTest;
 import org.apache.maven.scm.provider.cvslib.CvsScmTestUtils;
+import org.junit.Test;
 
 import java.util.Date;
 
@@ -41,6 +42,7 @@ public class CvsChangeLogCommandTest
         return "test-repo/changelog";
     }
 
+    @Test
     public void testGetCommandWithStartAndEndDate()
         throws Exception
     {
@@ -51,6 +53,7 @@ public class CvsChangeLogCommandTest
         testChangeLog( startDate, endDate, 32, null );
     }
 
+    @Test
     public void testGetCommandWithoutEndDate()
         throws Exception
     {
@@ -61,6 +64,7 @@ public class CvsChangeLogCommandTest
         testChangeLog( startDate, endDate, 51, null );
     }
 
+    @Test
     public void testGetCommandWithBranchOrTag()
         throws Exception
     {

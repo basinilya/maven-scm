@@ -23,6 +23,7 @@ import org.apache.maven.scm.manager.ScmManager;
 import org.apache.maven.scm.provider.cvslib.AbstractCvsScmTest;
 import org.apache.maven.scm.repository.ScmRepository;
 import org.apache.maven.scm.repository.ScmRepositoryException;
+import org.junit.Test;
 
 /**
  * @author <a href="mailto:evenisse@apache.org">Emmanuel Venisse</a>
@@ -42,6 +43,7 @@ public class CvsScmProviderRepositoryTest
         scmManager = getScmManager();
     }
 
+    @Test
     public void testParseConnectionFromPath()
         throws Exception
     {
@@ -61,6 +63,7 @@ public class CvsScmProviderRepositoryTest
         assertEquals( "surefire", repo.getModule() );
     }
 
+    @Test
     public void testParseRemotePserverConnection()
         throws Exception
     {
@@ -81,6 +84,7 @@ public class CvsScmProviderRepositoryTest
         assertEquals( ":pserver:anoncvs@cvs.apache.org:2401/home/cvspublic", repo.getCvsRootForCvsPass() );
     }
 
+    @Test
     public void testParseRemotePserverConnectionWithUsernameDefinedInScmRepository()
         throws Exception
     {
@@ -103,6 +107,7 @@ public class CvsScmProviderRepositoryTest
         assertEquals( ":pserver:myusername@cvs.apache.org:2401/home/cvspublic", repo.getCvsRootForCvsPass() );
     }
 
+    @Test
     public void testParseRemotePserverConnectionWithoutUsername()
         throws Exception
     {
@@ -121,6 +126,7 @@ public class CvsScmProviderRepositoryTest
         }
     }
 
+    @Test
     public void testParseRemotePserverConnection2()
         throws Exception
     {
@@ -141,6 +147,7 @@ public class CvsScmProviderRepositoryTest
         assertEquals( ":pserver:anoncvs@cvs.apache.org:2401/home/cvspublic", repo.getCvsRootForCvsPass() );
     }
 
+    @Test
     public void testParseRemotePserverConnectionWithPort()
         throws Exception
     {
@@ -165,6 +172,7 @@ public class CvsScmProviderRepositoryTest
         assertEquals( ":pserver:anoncvs@cvs.apache.org:2401/home/cvspublic", repo.getCvsRootForCvsPass() );
     }
 
+    @Test
     public void testParseRemotePserverConnectionWithPassword()
         throws Exception
     {
@@ -187,6 +195,7 @@ public class CvsScmProviderRepositoryTest
         assertEquals( ":pserver:anoncvs@cvs.apache.org:2401/home/cvspublic", repo.getCvsRootForCvsPass() );
     }
 
+    @Test
     public void testParseRemotePserverConnectionWithPortAndPassword()
         throws Exception
     {
@@ -212,6 +221,7 @@ public class CvsScmProviderRepositoryTest
         assertEquals( ":pserver:anoncvs@cvs.apache.org:2402/home/cvspublic", repo.getCvsRootForCvsPass() );
     }
 
+    @Test
     public void testParseRemotePserverConnectionWithBarsAsDelimiter()
         throws Exception
     {
@@ -234,12 +244,14 @@ public class CvsScmProviderRepositoryTest
         assertEquals( ":pserver:anoncvs@cvs.apache.org:2401/home/cvspublic", repo.getCvsRootForCvsPass() );
     }
 
+    @Test
     public void testIllegalRepository()
         throws Exception
     {
         testIllegalUrl( "pserver:cvs.apache.org:/home/cvspublic:maven" );
     }
 
+    @Test
     public void testParseLocalConnection()
         throws Exception
     {
@@ -263,6 +275,7 @@ public class CvsScmProviderRepositoryTest
      *
      * @throws Exception
      */
+    @Test
     public void testGetCvsRootForCvsPass()
         throws Exception
     {
@@ -278,6 +291,7 @@ public class CvsScmProviderRepositoryTest
      *
      * @throws Exception
      */
+    @Test
     public void testSCM376()
         throws Exception
     {

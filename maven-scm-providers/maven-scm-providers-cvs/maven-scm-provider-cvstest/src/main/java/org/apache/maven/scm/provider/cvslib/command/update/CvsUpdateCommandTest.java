@@ -29,6 +29,7 @@ import org.apache.maven.scm.provider.cvslib.CvsScmTestUtils;
 import org.apache.maven.scm.repository.ScmRepository;
 import org.codehaus.plexus.util.FileUtils;
 import org.codehaus.plexus.util.IOUtil;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -75,6 +76,7 @@ public class CvsUpdateCommandTest
     /**
      * @todo merge into tck
      */
+    @Test
     public void testCvsUpdate()
         throws Exception
     {

@@ -19,7 +19,7 @@ package org.apache.maven.scm.provider.cvslib;
  * under the License.
  */
 
-import org.apache.maven.scm.ScmTestCase;
+import org.apache.maven.scm.ScmJUnit4TestCase;
 import org.apache.maven.scm.repository.ScmRepository;
 import org.codehaus.plexus.util.FileUtils;
 
@@ -30,7 +30,7 @@ import org.codehaus.plexus.util.FileUtils;
  * @todo refactor into non-existence
  */
 public abstract class AbstractCvsScmTest
-    extends ScmTestCase
+    extends ScmJUnit4TestCase
 {
     /** {@inheritDoc} */
     public void setUp()

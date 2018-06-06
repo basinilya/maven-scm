@@ -25,6 +25,7 @@ import org.apache.maven.scm.command.checkout.CheckOutScmResult;
 import org.apache.maven.scm.manager.ScmManager;
 import org.apache.maven.scm.provider.cvslib.AbstractCvsScmTest;
 import org.apache.maven.scm.provider.cvslib.CvsScmTestUtils;
+import org.junit.Test;
 
 import java.io.File;
 import java.util.List;
@@ -46,6 +47,7 @@ public class CvsCheckoutCommandTest
     /**
      * @todo move this test to the TCK.
      */
+    @Test
     public void testCheckOutWithoutTag()
         throws Exception
     {
@@ -81,6 +83,7 @@ public class CvsCheckoutCommandTest
     /**
      * @todo move this test to the TCK - checkout with "revision", then have one for tag as well.
      */
+    @Test
     public void testCheckOutWithTag()
         throws Exception
     {

@@ -22,6 +22,7 @@ package org.apache.maven.scm.provider.cvslib.command.changelog;
 import org.apache.maven.scm.ChangeSet;
 import org.apache.maven.scm.log.DefaultLog;
 import org.apache.maven.scm.provider.cvslib.AbstractCvsScmTest;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -61,6 +62,7 @@ public class CvsChangeLogConsumerTest
      *
      * @throws Exception when there is an unexpected problem
      */
+    @Test
     public void testParse()
         throws Exception
     {
