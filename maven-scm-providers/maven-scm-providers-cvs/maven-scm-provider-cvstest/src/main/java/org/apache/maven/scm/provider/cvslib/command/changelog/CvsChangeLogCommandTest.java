@@ -79,12 +79,7 @@ public class CvsChangeLogCommandTest
     private void testChangeLog( Date startDate, Date endDate, int changeLogSize, String branch )
         throws Exception
     {
-        if ( !isSystemCmd( CvsScmTestUtils.CVS_COMMAND_LINE ) )
-        {
-            System.err.println( "'" + CvsScmTestUtils.CVS_COMMAND_LINE + "' is not a system command. Ignored "
-                + getName() + "." );
-            return;
-        }
+        assumeHaveCvsBinary();
 
         ScmManager scmManager = getScmManager();
 

@@ -22,6 +22,7 @@ package org.apache.maven.scm.provider.cvslib;
 import org.apache.maven.scm.ScmJUnit4TestCase;
 import org.apache.maven.scm.repository.ScmRepository;
 import org.codehaus.plexus.util.FileUtils;
+import org.junit.Assume;
 
 /**
  * @author <a href="mailto:evenisse@apache.org">Emmanuel Venisse</a>
@@ -39,6 +40,15 @@ public abstract class AbstractCvsScmTest
         super.setUp();
 
         FileUtils.mkdir( getWorkingDirectory().getAbsolutePath() );
+    }
+
+    /**
+     * Throw AssumptionViolatedException and skip the test, if 'cvs' is not a system command.
+     */
+    protected void assumeHaveCvsBinary()
+    {
+        Assume.assumeTrue( "'" + CvsScmTestUtils.CVS_COMMAND_LINE + "' is not a system command. Ignored " + getName()
+            + ".", isSystemCmd( CvsScmTestUtils.CVS_COMMAND_LINE ) );
     }
 
     protected ScmRepository getScmRepository()
